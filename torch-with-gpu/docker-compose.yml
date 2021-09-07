@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 8888:8888
+    volumes:
+      - ./:/workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - capabilities: [gpu]
